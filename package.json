@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "chrome-types": "^0.1.231",
+    "dompurify": "^3.0.6"
+  }
+}

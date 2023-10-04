@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Пропуск аунтефікації VNS НУЛП",
+  "version": "1.0",
+  "description": "Дозволяє скоротити час, витрачаємий на спробу авторизації в ВНС Львівської Політехніки",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "background"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://vns.lpnu.ua/login/*","https://accounts.google.com/o/oauth2/v2/auth/*"],
+      "js": ["/content.js"]
+    }
+  ]
+}
